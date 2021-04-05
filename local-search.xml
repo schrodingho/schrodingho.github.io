@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Lyrics Collection</title>
+    <link href="/2021/04/02/Lyrics-Collection/"/>
+    <url>/2021/04/02/Lyrics-Collection/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Coldplay"><a href="#Coldplay" class="headerlink" title="Coldplay"></a>Coldplay</h2><h3>Yellow</h3>Look at the stars<br>Look how they shine for you<br>And everything you do<br>Yeah, they were all yellow<br><br>I came along<br>I wrote a song for you<br>And all the things you do<br>And it was called &quot;Yellow&quot;<br><br>So then I took my turn<br>Oh what a thing to have done<br>And it was all yellow<br><br>Your skin<br>Oh yeah your skin and bones<br>Turn into something beautiful<br>Do you know<br>You know I love you so<br>You know I love you so<br><br>I swam across<br>I jumped across for you<br>Oh what a thing to do<br>Cause you were all yellow<br><br>I drew a line<br>I drew a line for you<br>Oh what a thing to do<br>And it was all yellow<br><br>Your skin<br>Oh yeah your skin and bones<br>Turn into something beautiful<br>Do you know<br>For you I'd bleed myself dry<br>For you I'd bleed myself dry<br><br>It's true<br>Look how they shine for you<br>Look how they shine for you<br>Look how they shine for<br>Look how they shine for you<br>Look how they shine for you<br>Look how they shine<br><br>Look at the stars<br>Look how they shine for you<br>And all the things that you do]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>音乐</tag>
+      
+      <tag>歌词</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Bayesian_Review</title>
+    <link href="/2021/03/25/Bayesian-Review/"/>
+    <url>/2021/03/25/Bayesian-Review/</url>
+    
+    <content type="html"><![CDATA[<h1 id="贝叶斯理论回顾"><a href="#贝叶斯理论回顾" class="headerlink" title="贝叶斯理论回顾"></a>贝叶斯理论回顾</h1><h3 id="统计VS贝叶斯"><a href="#统计VS贝叶斯" class="headerlink" title="统计VS贝叶斯"></a>统计VS贝叶斯</h3><ul><li>古典统计学：通过进行大量重复实验并统计某个特定结果出现的频率作为对未知参数的估计。</li><li>贝叶斯统计学：使用概率的方法来解决统计学问题。<ul><li>贝叶斯统计学认为未知的模型或者参数是不确定的、符合某个概率分布。特别的，我们会首先根据主观判断或者过去的经验，对这个概率分布有一个猜测，称为<strong>先验分布</strong>（prior distribution）；然后根据越来越多的<strong>观测值</strong>（new data 或者 new evidence）来修正对该概率分布的猜测，最后得到的概率分布称为<strong>后验分布</strong>（posterior distribution）。</li><li><strong>贝叶斯统计学中的“概率”的概念可以被解释为我们对未知变量不同取值的信心程度的测度（measure of confidence）。贝叶斯统计不消除未知变量的不确定性，而是通过越来越多的新的观测点来持续更新我们对于该未知变量不确定性的认知，提高我们对不确定性的判断的信心。</strong><br><a href="https://zhuanlan.zhihu.com/p/38553838">贝叶斯统计-石川的文章-知乎</a></li></ul></li></ul><h3 id="贝叶斯定理-Naive-Bayes"><a href="#贝叶斯定理-Naive-Bayes" class="headerlink" title="贝叶斯定理(Naive Bayes)"></a>贝叶斯定理(Naive Bayes)</h3><ul><li>条件概率：在B事件发生的前提下，事件A发生的概率，即$P(A|B)$</li><li>$P(A|B)$定义: $P(A|B)=\frac{P(AB)}{P(B)}$</li><li>推导可得:$P(B)P(A|B)=P(AB)$</li><li>替换条件概率公式中的P(AB)得到贝叶斯定理：<br>$$P(A|B)=\frac{P(B|A)P(A)}{P(B)}$$<h3 id="贝叶斯推断"><a href="#贝叶斯推断" class="headerlink" title="贝叶斯推断"></a>贝叶斯推断</h3></li><li>核心：通过新的观测数据（或者新的证据）来不断的更新我们对未知量的认知</li><li>例子：假设我们的先验认知是明天太阳不会升起（即明天太阳不会升起的概率为 1）。然而，实际观测到的证据是每天太阳都照常升起。由此，我们会不断的修正之前那个先验，由此得到的后验认知是下一天太阳不会升起的概率越来越低。</li><li>贝叶斯推断：新证据或者数据来更新认知的过程</li><li>假设一个需要估计的未知量(参数)$\theta$,并且针对该变量有一个先验分布$P(\theta)$. 令$D$为一系列观测值(数据).通过$D$来不断修正对$\theta$分布的认识-&gt;即后验分布$P(\theta|D)$<br>$$P(\theta|D)=\frac{P(D|\theta)P(\theta)}{P(D)}$$</li><li>$\theta$的先验分布$P(\theta)$</li><li>$\theta$的后验分布$P(\theta|D)$</li><li>可能性、似然度(likelihood)$P(D|\theta)$.未知变量服从$\theta$的前提下，观察序列$D$的条件概率</li><li>观测值$P(D)$.考虑所有可能的$\theta$分布下，所能观测到的序列$D$的非条件概率.</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>贝叶斯</tag>
+      
+      <tag>复习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Review_of_probability_theory</title>
+    <link href="/2021/03/23/Review-of-probability-theory/"/>
+    <url>/2021/03/23/Review-of-probability-theory/</url>
+    
+    <content type="html"><![CDATA[<h1 id="概率论复习"><a href="#概率论复习" class="headerlink" title="概率论复习"></a>概率论复习</h1><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2><h3 id="切比雪夫定律-对概率作出很粗略的估计"><a href="#切比雪夫定律-对概率作出很粗略的估计" class="headerlink" title="切比雪夫定律(对概率作出很粗略的估计)"></a>切比雪夫定律(对概率作出很粗略的估计)</h3><p>随机变量$X$的<strong>数学期望$E(X)$和方差$D(X)$都存在</strong>,则对于任意常数$\varepsilon&gt;0$,下列不等式成立:</p><ul><li>$P{|X-E(X)|\geq\varepsilon}\leq\frac{D(X)}{\varepsilon^2}$</li><li>$P{|X-E(X)|\leq\varepsilon}\geq1-\frac{D(X)}{\varepsilon^2}$</li></ul><blockquote><h4 id="期望与方差的定义-连续随机变量"><a href="#期望与方差的定义-连续随机变量" class="headerlink" title="期望与方差的定义(连续随机变量)"></a>期望与方差的定义(连续随机变量)</h4><ul><li>$E(X)=\int^{+\infty}_{-\infty}xf(x)dx$</li><li>$D(X)=\int^{+\infty}_{-\infty}[x-E(X)]^2f_X(x)dx$</li></ul></blockquote><h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>设随机变量序列$X_1,X_2,…,X_n,…$的每个数学期望E(X_i),$i=1,2,…$均存在,如果对任意给定的正实数$\varepsilon$,有:<br>$${\lim_{x \to -\infty}P{|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|&lt;\varepsilon}=1}$$<br>则随机变量序列$X_1,X_2,…,X_n,…$服从大数定律</p><h4 id="切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律"><a href="#切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律" class="headerlink" title="切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律"></a>切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律</h4><h5 id="两个小结论"><a href="#两个小结论" class="headerlink" title="两个小结论"></a>两个小结论</h5><ul><li>由独立同分布和辛钦大数定律-&gt; 相互独立同分布的随机变量序列$X_1,X_2,…,X_n,…$的算术平均值$\frac{1}{n}\sum_{n}^{i=1}X_i$在$n$充分大时具有稳定性，其稳定值为$E(X_i)=\mu$.这也就是工程应用中往往用大量测量值的算术平均值作为精确值的估计的理论依据</li><li>伯努利大数定律以严格的数学形式表述了频率的稳定性</li><li><strong>大数定律讲的是样本均值收敛到总体均值（就是期望</strong>）</li></ul><h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><ul><li><strong>中心极限定理告诉我们，当样本量足够大时，样本均值的分布慢慢变成正态分布</strong></li></ul><h4 id="大数定律-与-中心极限定律-关系"><a href="#大数定律-与-中心极限定律-关系" class="headerlink" title="大数定律 与 中心极限定律 关系"></a>大数定律 与 中心极限定律 关系</h4><ul><li>条件<ul><li>大数定律: $E(|X|)&lt;\infty$</li><li>中心极限定律: $E(X^2)&lt;\infty$</li></ul></li><li>定理<ul><li>大数定律: $\frac{1}{n}\sum_{i=1}^{n}X_i-E(X)\stackrel{P}\rightarrow0$</li><li>中心极限定理: $\sqrt{n}(\frac{1}{n}\sum_{i=1}^{n}X_i-E(X))\stackrel{D}\rightarrow N(0,\sigma^2)$</li></ul></li></ul><h3 id="抽样分布"><a href="#抽样分布" class="headerlink" title="抽样分布"></a>抽样分布</h3><h4 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h4><p>卡方分布：n 个标准正态分布随机变量的平方和的分布成为具有n个自由的卡方分布。分布形状取决于自由度n的大小，通常为不对称的右偏分布，自由度增大逐渐趋于对称。</p><h4 id="T分布"><a href="#T分布" class="headerlink" title="T分布"></a>T分布</h4><p>t分布，用t表示样本均值经过标准化后的新随机变量，因此成为t分布，也成学生分布。设随机变量Z服从标准正太分布，X服从n个自由度的卡方分布，且Z与X独立。<br>$$T=\frac{Z}{\sqrt{X/n}}$$<br>服从自由度为n的t分布。t 分布类似于正态分布，比正态分布平坦而分散，随着自由度增大逐渐趋于正态分布</p><h4 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h4><p>F分布是纪念著名统计学家R. A. Fisher 以其姓氏的第一个字母而命名的，它是两个卡方分布变量的比。设U服从自由度为n1的卡方分布，V服从自由度为n2的卡方分布，且U和V独立。则：<br>$$F=\frac{U/n_1}{V/n_2}$$<br>服从自由度为n1 和n2的F分布。<br><br><a href="https://www.zhihu.com/question/35756587/answer/846692080">摘自知乎-herain</a></p><h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><h4 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h4><p>样本矩代替总体矩从而估计参数</p><blockquote><p>原理：类似于大数定律，样本数足够大时，样本均值会收敛于总体期望<br><br>(随机变量的一阶原点矩是期望，二阶中心矩是方差)</p></blockquote><h4 id="最大似然估计法"><a href="#最大似然估计法" class="headerlink" title="最大似然估计法"></a>最大似然估计法</h4><ul><li>按照最大可能性的准则进行推断<ul><li>即$Max \space L(p)$-&gt;$\hat{p}$（p的最大估计值）</li></ul></li><li>若总体分布的概率密度函数为$P(X)$, 则似然函数为$L(p)=\Pi_{i=1}^nP(x_i)$</li></ul><h4 id="总结最大似然和贝叶斯"><a href="#总结最大似然和贝叶斯" class="headerlink" title="总结最大似然和贝叶斯"></a>总结最大似然和贝叶斯</h4><ul><li>贝叶斯：贝叶斯推断方法是将未知参数看做是一个随机变量，他具备某种先验分布。在已知观测数据 $x$的基础上，可以利用贝叶斯公式来推导后验概率分布$p_{\theta|X}(\theta|x)$,这样就同时包含人的先验知识以及观测值$x$所能提供的关于$\theta$的新信息。</li><li>经典统计：而经典统计方法是将未知参数$\theta$看作是一个常数，但是他是未知的，那么，这就需要去估计他了。经典统计的目标就是提出参数$\theta$的估计方法，并且保证其具有一定的性质。</li><li>最大似然是一种基于经典统计的方法, 多次实验后寻找使似然函数$L(X;\theta)$取最大值的参数$\theta$(似然函数$L(x_1,x_2,…,x_n;\theta)$指的是随机变量$X$取到指定的这一组样本值：$x_1,x_2,…,x_n$时的概率大小。当未知的待估计的参数$\theta$取不同的值时，计算出来的概率的值会发生变化)</li><li>详情见<a href="https://www.zhihu.com/question/24124998/answer/1304697251">Maximum Likelihood</a><h3 id="估计量的优良性准则"><a href="#估计量的优良性准则" class="headerlink" title="估计量的优良性准则"></a>估计量的优良性准则</h3></li><li>无偏性</li><li>有效性</li><li>相合性</li></ul><h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><p><a href="https://www.zhihu.com/question/23149768/answer/279244795">Hypothesis Evaluation</a><br>总结起来，$p$值就是对于观察到的数据$T_{obs}$，能获得的拒绝$H_0$的最小的显著性水平$\alpha$。也可以简单说成是错误地拒绝了$H_0$的概率。也就是Type 1 Error(第一类错误)。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>复习</tag>
+      
+      <tag>概率论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>some_interesting</title>
+    <link href="/2021/03/15/some-interesting/"/>
+    <url>/2021/03/15/some-interesting/</url>
+    
+    <content type="html"><![CDATA[<h1 id="计算机考古学"><a href="#计算机考古学" class="headerlink" title="计算机考古学"></a>计算机考古学</h1><blockquote><p>看Web Archive引起的遐思</p></blockquote><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>今日无聊地看起了泥电BBS的Web Archive，试图探寻以下远古互联网时代的记忆。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Notes</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>奇思妙想</tag>
+      
+      <tag>考古</tag>
+      
+      <tag>地理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SQL_shuati</title>
+    <link href="/2021/03/11/SQL-shuati/"/>
+    <url>/2021/03/11/SQL-shuati/</url>
+    
+    <content type="html"><![CDATA[<h1 id="SQL刷题笔记"><a href="#SQL刷题笔记" class="headerlink" title="SQL刷题笔记"></a>SQL刷题笔记</h1><ul><li><p><code>limit x, y</code> 分句表示: 跳过 x 条数据，读取 y 条数据</p></li><li><p><code>limit y offset x</code> 分句表示: 跳过 x 条数据，读取 y 条数据</p></li><li><p>where merge:</p><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">e</span>.last_name, <span class="hljs-built_in">e</span>.first_name, d.dept_no<br><span class="hljs-keyword">FROM</span> employees <span class="hljs-keyword">AS</span> <span class="hljs-built_in">e</span>, dept_emp <span class="hljs-keyword">AS</span> d<br><span class="hljs-keyword">WHERE</span> <span class="hljs-built_in">e</span>.emp_no = d.emp_no;<br></code></pre></td></tr></table></figure></li><li><p>outer join: Left join:保留左表信息</p></li><li><p>“Where” 是一个约束声明，使用Where来约束来之数据库的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p></li><li><p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用<strong>聚合函数</strong>。</p></li><li><p>SQL排序函数：<a href="https://blog.csdn.net/shaiguchun9503/article/details/82349050">https://blog.csdn.net/shaiguchun9503/article/details/82349050</a></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-built_in">ROW_NUMBER</span>()<br><span class="hljs-built_in">RANK</span>()<br><span class="hljs-built_in">DENSE_RANK</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;xxx&#x27;</span> <span class="hljs-keyword">desc</span>)<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Notes</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>SQL</tag>
+      
+      <tag>刷题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MIMIC-III 数据库使用指南(一)</title>
+    <link href="/2021/03/04/Guide-of-MIMIC-III/"/>
+    <url>/2021/03/04/Guide-of-MIMIC-III/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MIMIC-III数据库使用指南-一"><a href="#MIMIC-III数据库使用指南-一" class="headerlink" title="MIMIC-III数据库使用指南(一)"></a>MIMIC-III数据库使用指南(一)</h1><h3 id="Overview-of-MIMIC-III"><a href="#Overview-of-MIMIC-III" class="headerlink" title="Overview of MIMIC-III"></a>Overview of MIMIC-III</h3><p>MIMIC III[1]是一个可以免费访问的重症护理数据库。由MIT Lab for Computational Physiology开发的一个公开可用的数据集，包含约60000例重症监护病房入院病人相关的确定的健康数据，包括人口统计、生命体征、实验室检测、药物治疗等等。<br></p><h3 id="MIMIC-III-数据库下载"><a href="#MIMIC-III-数据库下载" class="headerlink" title="MIMIC-III 数据库下载"></a>MIMIC-III 数据库下载</h3><ol><li>在申请使用MIMIC数据库之前，需要完成一个小测试（Data or Specimens Only Research）<ul><li>首先在CITI program网站上注册，选择“Massachusetts Institute of Technology Affiliates”作为您的affiliation（不是“independent learner”）</li><li>单击链接以添加“Massachusetts Institute of Technology Affiliates course”。在“ Human Subjects training category”培训类别中，选择“Data or Specimens Only Research”课程</li><li>完成课程并保存完成报告的副本。完成报告列出了所有已完成的模块，以及日期和分数。</li></ul></li><li>访问MIMIC-III<ul><li>在Physionet上注册账号并登录：<a href="https://physionet.org/">https://physionet.org</a></li><li>前往项目链接：<a href="https://physionet.org/content/mimiciii/">https://physionet.org/content/mimiciii/</a></li><li>在项目说明中找到“Files”部分</li><li>单击“credentialed user”链接，然后按照说明提交您的应用程序以进行凭据访问。请记住提供您的CITI完成报告（即1中最后一点的报告）</li><li>批准后，您将收到一封电子邮件，其中包含有关从PhysioNetWorks下载数据库的说明。批准可能需要几个工作日，如果您的要求缺少任何必填信息，批准将被延迟。（一定要保证提交信息的完整性、准确性）</li><li>*如果是学生或者博后，需要在“reference”中填上你<strong>导师</strong>的姓名和联系方式。如果列出的信息没有在组织网站的目录或其他易于查找的页面中，请提供主管或同事等推荐人的姓名和联系信息。不要列出自己作为参考。</li><li>*确保从CITI“仅数据或标本研究”培训计划中上传完成报告（PDF或图像文件）。完成报告列出了所有已完成的模块，以及日期和分数。如果您想提交多页，请将它们合并为一个pdf文件。</li></ul></li><li>下载MIMIC-III<ul><li>再取得资格后进行下载，下载链接：<a href="https://physionet.org/content/mimiciii/">https://physionet.org/content/mimiciii/</a></li><li>文件较大(50G+)，建议存储在有较大空间的硬盘中，推荐存储在SSD等写入和读取较快的硬盘中，方便之后使用。</li></ul></li><li>MIMIC-III demo<ul><li>由于数据库本体过大，官方还提供了demo方便使用者熟悉操作，编写demo代码。下载链接：<a href="https://physionet.org/content/mimiciii-demo/">https://physionet.org/content/mimiciii-demo/</a><h3 id="MIMIC-III-导入-PostgreSQL"><a href="#MIMIC-III-导入-PostgreSQL" class="headerlink" title="MIMIC-III 导入 PostgreSQL"></a>MIMIC-III 导入 PostgreSQL</h3></li></ul></li><li>PostgreSQL下载<ul><li>PostgreSQL是世界知名的开源数据库软件。下载链接（包含Linux/MacOS/Windows）：<a href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a></li></ul></li><li>PostgreSQL安装与简单操作</li><li>导入MIMIC-III</li><li>简单使用<h3 id="MIMIC-III-重要的表"><a href="#MIMIC-III-重要的表" class="headerlink" title="MIMIC-III 重要的表"></a>MIMIC-III 重要的表</h3></li></ol><ul><li>MIMIC官网关于<a href="https://mimic.physionet.org/mimictables/admissions/">表的简述</a></li><li><a href="https://blog.csdn.net/sz891016/article/details/83537524">中文翻译版</a><h3 id="MIMIC-III-查询实例"><a href="#MIMIC-III-查询实例" class="headerlink" title="MIMIC-III 查询实例"></a>MIMIC-III 查询实例</h3></li><li>select<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs SQL">查询ADMISSIONS表中的所有列<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> admissions;<br><span class="hljs-keyword">DISTINCT</span>函数 <br><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span>(gender) <span class="hljs-keyword">from</span> patients;<br>COUNT函数 <br><span class="hljs-keyword">select</span> gender,<span class="hljs-built_in">count</span>(gender) <span class="hljs-keyword">as</span> gender_count <span class="hljs-keyword">from</span> patients <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> gender;<br></code></pre></td></tr></table></figure></li><li>link<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span>内连接<br><span class="hljs-keyword">select</span> pa.subject_id, pa.gender, pre.drug <span class="hljs-keyword">from</span> patients pa <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> prescriptions pre <span class="hljs-keyword">on</span> pa.subject_id<span class="hljs-operator">=</span>pre.subject_id<br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> pa.subject_id, pa.gender, pre.drug<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> pa.subject_id <span class="hljs-keyword">asc</span>;<br><span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span>外连接(<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。)<br><span class="hljs-keyword">select</span> pa.subject_id, pa.gender, pre.drug <span class="hljs-keyword">from</span> patients pa <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> prescriptions pre <span class="hljs-keyword">on</span> pa.subject_id<span class="hljs-operator">=</span>pre.subject_id<br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> pa.subject_id, pa.gender, pre.drug<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> pa.subject_id <span class="hljs-keyword">asc</span>;<br></code></pre></td></tr></table></figure><h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3></li></ul><p>[1] MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: 10.1038/sdata.2016.35. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a><br><br><br>Deadline: 2021.3.15  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Course</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+      <tag>MIMIC-III</tag>
+      
+      <tag>医疗</tag>
+      
+      <tag>数据库</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Guide of Hexo</title>
+    <link href="/2021/03/04/Guide-of-Hexo/"/>
+    <url>/2021/03/04/Guide-of-Hexo/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="For-Markdown"><a href="#For-Markdown" class="headerlink" title="For Markdown"></a>For Markdown</h3><p>Write your blog on online Markdown application <a href="http://mahua.jser.me/">Mahua</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Course</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>

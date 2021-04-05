@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="Schrodingho&#39;s Blog">
+  
+  <meta name="author" content="Schrodingho">
+  <meta name="keywords" content="">
+  
+  <title>MIMIC-III 数据库使用指南(一) - BBQzone</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"schrodingho.github.io","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>BBQzone</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="MIMIC-III 数据库使用指南(一)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-04 10:58" pubdate>
+        2021年3月4日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      916 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">MIMIC-III 数据库使用指南(一)</h1>
+            
+            <div class="markdown-body">
+              <h1 id="MIMIC-III数据库使用指南-一"><a href="#MIMIC-III数据库使用指南-一" class="headerlink" title="MIMIC-III数据库使用指南(一)"></a>MIMIC-III数据库使用指南(一)</h1><h3 id="Overview-of-MIMIC-III"><a href="#Overview-of-MIMIC-III" class="headerlink" title="Overview of MIMIC-III"></a>Overview of MIMIC-III</h3><p>MIMIC III[1]是一个可以免费访问的重症护理数据库。由MIT Lab for Computational Physiology开发的一个公开可用的数据集，包含约60000例重症监护病房入院病人相关的确定的健康数据，包括人口统计、生命体征、实验室检测、药物治疗等等。<br></p>
+<h3 id="MIMIC-III-数据库下载"><a href="#MIMIC-III-数据库下载" class="headerlink" title="MIMIC-III 数据库下载"></a>MIMIC-III 数据库下载</h3><ol>
+<li>在申请使用MIMIC数据库之前，需要完成一个小测试（Data or Specimens Only Research）<ul>
+<li>首先在CITI program网站上注册，选择“Massachusetts Institute of Technology Affiliates”作为您的affiliation（不是“independent learner”）</li>
+<li>单击链接以添加“Massachusetts Institute of Technology Affiliates course”。在“ Human Subjects training category”培训类别中，选择“Data or Specimens Only Research”课程</li>
+<li>完成课程并保存完成报告的副本。完成报告列出了所有已完成的模块，以及日期和分数。</li>
+</ul>
+</li>
+<li>访问MIMIC-III<ul>
+<li>在Physionet上注册账号并登录：<a target="_blank" rel="noopener" href="https://physionet.org/">https://physionet.org</a></li>
+<li>前往项目链接：<a target="_blank" rel="noopener" href="https://physionet.org/content/mimiciii/">https://physionet.org/content/mimiciii/</a></li>
+<li>在项目说明中找到“Files”部分</li>
+<li>单击“credentialed user”链接，然后按照说明提交您的应用程序以进行凭据访问。请记住提供您的CITI完成报告（即1中最后一点的报告）</li>
+<li>批准后，您将收到一封电子邮件，其中包含有关从PhysioNetWorks下载数据库的说明。批准可能需要几个工作日，如果您的要求缺少任何必填信息，批准将被延迟。（一定要保证提交信息的完整性、准确性）</li>
+<li>*如果是学生或者博后，需要在“reference”中填上你<strong>导师</strong>的姓名和联系方式。如果列出的信息没有在组织网站的目录或其他易于查找的页面中，请提供主管或同事等推荐人的姓名和联系信息。不要列出自己作为参考。</li>
+<li>*确保从CITI“仅数据或标本研究”培训计划中上传完成报告（PDF或图像文件）。完成报告列出了所有已完成的模块，以及日期和分数。如果您想提交多页，请将它们合并为一个pdf文件。</li>
+</ul>
+</li>
+<li>下载MIMIC-III<ul>
+<li>再取得资格后进行下载，下载链接：<a target="_blank" rel="noopener" href="https://physionet.org/content/mimiciii/">https://physionet.org/content/mimiciii/</a></li>
+<li>文件较大(50G+)，建议存储在有较大空间的硬盘中，推荐存储在SSD等写入和读取较快的硬盘中，方便之后使用。</li>
+</ul>
+</li>
+<li>MIMIC-III demo<ul>
+<li>由于数据库本体过大，官方还提供了demo方便使用者熟悉操作，编写demo代码。下载链接：<a target="_blank" rel="noopener" href="https://physionet.org/content/mimiciii-demo/">https://physionet.org/content/mimiciii-demo/</a><h3 id="MIMIC-III-导入-PostgreSQL"><a href="#MIMIC-III-导入-PostgreSQL" class="headerlink" title="MIMIC-III 导入 PostgreSQL"></a>MIMIC-III 导入 PostgreSQL</h3></li>
+</ul>
+</li>
+<li>PostgreSQL下载<ul>
+<li>PostgreSQL是世界知名的开源数据库软件。下载链接（包含Linux/MacOS/Windows）：<a target="_blank" rel="noopener" href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a></li>
+</ul>
+</li>
+<li>PostgreSQL安装与简单操作</li>
+<li>导入MIMIC-III</li>
+<li>简单使用<h3 id="MIMIC-III-重要的表"><a href="#MIMIC-III-重要的表" class="headerlink" title="MIMIC-III 重要的表"></a>MIMIC-III 重要的表</h3></li>
+</ol>
+<ul>
+<li>MIMIC官网关于<a target="_blank" rel="noopener" href="https://mimic.physionet.org/mimictables/admissions/">表的简述</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sz891016/article/details/83537524">中文翻译版</a><h3 id="MIMIC-III-查询实例"><a href="#MIMIC-III-查询实例" class="headerlink" title="MIMIC-III 查询实例"></a>MIMIC-III 查询实例</h3></li>
+<li>select<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs SQL">查询ADMISSIONS表中的所有列<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> admissions;<br><span class="hljs-keyword">DISTINCT</span>函数 <br><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span>(gender) <span class="hljs-keyword">from</span> patients;<br>COUNT函数 <br><span class="hljs-keyword">select</span> gender,<span class="hljs-built_in">count</span>(gender) <span class="hljs-keyword">as</span> gender_count <span class="hljs-keyword">from</span> patients <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> gender;<br></code></pre></td></tr></table></figure></li>
+<li>link<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span>内连接<br><span class="hljs-keyword">select</span> pa.subject_id, pa.gender, pre.drug <span class="hljs-keyword">from</span> patients pa <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> prescriptions pre <span class="hljs-keyword">on</span> pa.subject_id<span class="hljs-operator">=</span>pre.subject_id<br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> pa.subject_id, pa.gender, pre.drug<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> pa.subject_id <span class="hljs-keyword">asc</span>;<br><span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span>外连接(<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。)<br><span class="hljs-keyword">select</span> pa.subject_id, pa.gender, pre.drug <span class="hljs-keyword">from</span> patients pa <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> prescriptions pre <span class="hljs-keyword">on</span> pa.subject_id<span class="hljs-operator">=</span>pre.subject_id<br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> pa.subject_id, pa.gender, pre.drug<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> pa.subject_id <span class="hljs-keyword">asc</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3></li>
+</ul>
+<p>[1] MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: 10.1038/sdata.2016.35. Available at: <a target="_blank" rel="noopener" href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a><br><br><br>Deadline: 2021.3.15  </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Course/">Course</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/MIMIC-III/">MIMIC-III</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8C%BB%E7%96%97/">医疗</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/11/SQL-shuati/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SQL_shuati</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/04/Guide-of-Hexo/">
+                        <span class="hidden-mobile">Guide of Hexo</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
