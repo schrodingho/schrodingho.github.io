@@ -239,12 +239,12 @@
 </ul>
 </li>
 <li>访问MIMIC-III<ul>
-<li>在Physionet上注册账号并登录：<a target="_blank" rel="noopener" href="https://physionet.org/">https://physionet.org</a></li>
+<li>在Physionet上注册账号并登录：<a target="_blank" rel="noopener" href="https://physionet.org">https://physionet.org</a></li>
 <li>前往项目链接：<a target="_blank" rel="noopener" href="https://physionet.org/content/mimiciii/">https://physionet.org/content/mimiciii/</a></li>
 <li>在项目说明中找到“Files”部分</li>
 <li>单击“credentialed user”链接，然后按照说明提交您的应用程序以进行凭据访问。请记住提供您的CITI完成报告（即1中最后一点的报告）</li>
 <li>批准后，您将收到一封电子邮件，其中包含有关从PhysioNetWorks下载数据库的说明。批准可能需要几个工作日，如果您的要求缺少任何必填信息，批准将被延迟。（一定要保证提交信息的完整性、准确性）</li>
-<li>*如果是学生或者博后，需要在“reference”中填上你<strong>导师</strong>的姓名和联系方式。如果列出的信息没有在组织网站的目录或其他易于查找的页面中，请提供主管或同事等推荐人的姓名和联系信息。不要列出自己作为参考。</li>
+<li><em>如果是学生或者博后，需要在“reference”中填上你<em>*导师</em></em>的姓名和联系方式。如果列出的信息没有在组织网站的目录或其他易于查找的页面中，请提供主管或同事等推荐人的姓名和联系信息。不要列出自己作为参考。</li>
 <li>*确保从CITI“仅数据或标本研究”培训计划中上传完成报告（PDF或图像文件）。完成报告列出了所有已完成的模块，以及日期和分数。如果您想提交多页，请将它们合并为一个pdf文件。</li>
 </ul>
 </li>
@@ -481,6 +481,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

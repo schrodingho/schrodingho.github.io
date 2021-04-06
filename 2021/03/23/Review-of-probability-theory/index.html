@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      191 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15
+      2
        分钟
     </span>
   
@@ -241,9 +241,10 @@
 <li>$D(X)=\int^{+\infty}_{-\infty}[x-E(X)]^2f_X(x)dx$</li>
 </ul>
 </blockquote>
-<h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>设随机变量序列$X_1,X_2,…,X_n,…$的每个数学期望E(X_i),$i=1,2,…$均存在,如果对任意给定的正实数$\varepsilon$,有:<br>$${\lim_{x \to -\infty}P{|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|&lt;\varepsilon}=1}$$<br>则随机变量序列$X_1,X_2,…,X_n,…$服从大数定律</p>
+<h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>设随机变量序列$X_1,X_2,…,X_n,…$的每个数学期望E(X_i),$i=1,2,…$均存在,如果对任意给定的正实数$\varepsilon$,有:</p>
+<script type="math/tex; mode=display">{\lim_{x \to -\infty}P\{|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|<\varepsilon\}=1}</script><p>则随机变量序列$X_1,X_2,…,X_n,…$服从大数定律</p>
 <h4 id="切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律"><a href="#切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律" class="headerlink" title="切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律"></a>切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律</h4><h5 id="两个小结论"><a href="#两个小结论" class="headerlink" title="两个小结论"></a>两个小结论</h5><ul>
-<li>由独立同分布和辛钦大数定律-&gt; 相互独立同分布的随机变量序列$X_1,X_2,…,X_n,…$的算术平均值$\frac{1}{n}\sum_{n}^{i=1}X_i$在$n$充分大时具有稳定性，其稳定值为$E(X_i)=\mu$.这也就是工程应用中往往用大量测量值的算术平均值作为精确值的估计的理论依据</li>
+<li>由独立同分布和辛钦大数定律-&gt; 相互独立同分布的随机变量序列$X<em>1,X_2,…,X_n,…$的算术平均值$\frac{1}{n}\sum</em>{n}^{i=1}X_i$在$n$充分大时具有稳定性，其稳定值为$E(X_i)=\mu$.这也就是工程应用中往往用大量测量值的算术平均值作为精确值的估计的理论依据</li>
 <li>伯努利大数定律以严格的数学形式表述了频率的稳定性</li>
 <li><strong>大数定律讲的是样本均值收敛到总体均值（就是期望</strong>）</li>
 </ul>
@@ -263,12 +264,13 @@
 </li>
 </ul>
 <h3 id="抽样分布"><a href="#抽样分布" class="headerlink" title="抽样分布"></a>抽样分布</h3><h4 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h4><p>卡方分布：n 个标准正态分布随机变量的平方和的分布成为具有n个自由的卡方分布。分布形状取决于自由度n的大小，通常为不对称的右偏分布，自由度增大逐渐趋于对称。</p>
-<h4 id="T分布"><a href="#T分布" class="headerlink" title="T分布"></a>T分布</h4><p>t分布，用t表示样本均值经过标准化后的新随机变量，因此成为t分布，也成学生分布。设随机变量Z服从标准正太分布，X服从n个自由度的卡方分布，且Z与X独立。<br>$$T=\frac{Z}{\sqrt{X/n}}$$<br>服从自由度为n的t分布。t 分布类似于正态分布，比正态分布平坦而分散，随着自由度增大逐渐趋于正态分布</p>
-<h4 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h4><p>F分布是纪念著名统计学家R. A. Fisher 以其姓氏的第一个字母而命名的，它是两个卡方分布变量的比。设U服从自由度为n1的卡方分布，V服从自由度为n2的卡方分布，且U和V独立。则：<br>$$F=\frac{U/n_1}{V/n_2}$$<br>服从自由度为n1 和n2的F分布。<br><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/35756587/answer/846692080">摘自知乎-herain</a></p>
+<h4 id="T分布"><a href="#T分布" class="headerlink" title="T分布"></a>T分布</h4><p>t分布，用t表示样本均值经过标准化后的新随机变量，因此成为t分布，也成学生分布。设随机变量Z服从标准正太分布，X服从n个自由度的卡方分布，且Z与X独立。</p>
+<script type="math/tex; mode=display">T=\frac{Z}{\sqrt{X/n}}</script><p>服从自由度为n的t分布。t 分布类似于正态分布，比正态分布平坦而分散，随着自由度增大逐渐趋于正态分布</p>
+<h4 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h4><p>F分布是纪念著名统计学家R. A. Fisher 以其姓氏的第一个字母而命名的，它是两个卡方分布变量的比。设U服从自由度为n1的卡方分布，V服从自由度为n2的卡方分布，且U和V独立。则：</p>
+<script type="math/tex; mode=display">F=\frac{U/n_1}{V/n_2}</script><p>服从自由度为n1 和n2的F分布。<br><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/35756587/answer/846692080">摘自知乎-herain</a></p>
 <h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><h4 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h4><p>样本矩代替总体矩从而估计参数</p>
 <blockquote>
 <p>原理：类似于大数定律，样本数足够大时，样本均值会收敛于总体期望<br><br>(随机变量的一阶原点矩是期望，二阶中心矩是方差)</p>
-</blockquote>
 <h4 id="最大似然估计法"><a href="#最大似然估计法" class="headerlink" title="最大似然估计法"></a>最大似然估计法</h4><ul>
 <li>按照最大可能性的准则进行推断<ul>
 <li>即$Max \space L(p)$-&gt;$\hat{p}$（p的最大估计值）</li>
@@ -276,6 +278,7 @@
 </li>
 <li>若总体分布的概率密度函数为$P(X)$, 则似然函数为$L(p)=\Pi_{i=1}^nP(x_i)$</li>
 </ul>
+</blockquote>
 <h4 id="总结最大似然和贝叶斯"><a href="#总结最大似然和贝叶斯" class="headerlink" title="总结最大似然和贝叶斯"></a>总结最大似然和贝叶斯</h4><ul>
 <li>贝叶斯：贝叶斯推断方法是将未知参数看做是一个随机变量，他具备某种先验分布。在已知观测数据 $x$的基础上，可以利用贝叶斯公式来推导后验概率分布$p_{\theta|X}(\theta|x)$,这样就同时包含人的先验知识以及观测值$x$所能提供的关于$\theta$的新信息。</li>
 <li>经典统计：而经典统计方法是将未知参数$\theta$看作是一个常数，但是他是未知的，那么，这就需要去估计他了。经典统计的目标就是提出参数$\theta$的估计方法，并且保证其具有一定的性质。</li>
@@ -483,6 +486,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

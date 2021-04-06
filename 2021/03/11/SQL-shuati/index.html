@@ -231,14 +231,10 @@
             
             <div class="markdown-body">
               <h1 id="SQL刷题笔记"><a href="#SQL刷题笔记" class="headerlink" title="SQL刷题笔记"></a>SQL刷题笔记</h1><ul>
-<li><p><code>limit x, y</code> 分句表示: 跳过 x 条数据，读取 y 条数据</p>
-</li>
-<li><p><code>limit y offset x</code> 分句表示: 跳过 x 条数据，读取 y 条数据</p>
-</li>
-<li><p>where merge:</p>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">e</span>.last_name, <span class="hljs-built_in">e</span>.first_name, d.dept_no<br><span class="hljs-keyword">FROM</span> employees <span class="hljs-keyword">AS</span> <span class="hljs-built_in">e</span>, dept_emp <span class="hljs-keyword">AS</span> d<br><span class="hljs-keyword">WHERE</span> <span class="hljs-built_in">e</span>.emp_no = d.emp_no;<br></code></pre></td></tr></table></figure></li>
-<li><p>outer join: Left join:保留左表信息</p>
-</li>
+<li><code>limit x, y</code> 分句表示: 跳过 x 条数据，读取 y 条数据</li>
+<li><code>limit y offset x</code> 分句表示: 跳过 x 条数据，读取 y 条数据</li>
+<li>where merge:<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">e</span>.last_name, <span class="hljs-built_in">e</span>.first_name, d.dept_no<br><span class="hljs-keyword">FROM</span> employees <span class="hljs-keyword">AS</span> <span class="hljs-built_in">e</span>, dept_emp <span class="hljs-keyword">AS</span> d<br><span class="hljs-keyword">WHERE</span> <span class="hljs-built_in">e</span>.emp_no = d.emp_no;<br></code></pre></td></tr></table></figure></li>
+<li>outer join: Left join:保留左表信息</li>
 <li><p>“Where” 是一个约束声明，使用Where来约束来之数据库的数据，Where是在结果返回之前起作用的，且Where中不能使用聚合函数。</p>
 </li>
 <li><p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用<strong>聚合函数</strong>。</p>
@@ -450,6 +446,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

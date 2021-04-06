@@ -242,11 +242,11 @@
 <li>条件概率：在B事件发生的前提下，事件A发生的概率，即$P(A|B)$</li>
 <li>$P(A|B)$定义: $P(A|B)=\frac{P(AB)}{P(B)}$</li>
 <li>推导可得:$P(B)P(A|B)=P(AB)$</li>
-<li>替换条件概率公式中的P(AB)得到贝叶斯定理：<br>$$P(A|B)=\frac{P(B|A)P(A)}{P(B)}$$<h3 id="贝叶斯推断"><a href="#贝叶斯推断" class="headerlink" title="贝叶斯推断"></a>贝叶斯推断</h3></li>
+<li>替换条件概率公式中的P(AB)得到贝叶斯定理：<script type="math/tex; mode=display">P(A|B)=\frac{P(B|A)P(A)}{P(B)}</script><h3 id="贝叶斯推断"><a href="#贝叶斯推断" class="headerlink" title="贝叶斯推断"></a>贝叶斯推断</h3></li>
 <li>核心：通过新的观测数据（或者新的证据）来不断的更新我们对未知量的认知</li>
 <li>例子：假设我们的先验认知是明天太阳不会升起（即明天太阳不会升起的概率为 1）。然而，实际观测到的证据是每天太阳都照常升起。由此，我们会不断的修正之前那个先验，由此得到的后验认知是下一天太阳不会升起的概率越来越低。</li>
 <li>贝叶斯推断：新证据或者数据来更新认知的过程</li>
-<li>假设一个需要估计的未知量(参数)$\theta$,并且针对该变量有一个先验分布$P(\theta)$. 令$D$为一系列观测值(数据).通过$D$来不断修正对$\theta$分布的认识-&gt;即后验分布$P(\theta|D)$<br>$$P(\theta|D)=\frac{P(D|\theta)P(\theta)}{P(D)}$$</li>
+<li>假设一个需要估计的未知量(参数)$\theta$,并且针对该变量有一个先验分布$P(\theta)$. 令$D$为一系列观测值(数据).通过$D$来不断修正对$\theta$分布的认识-&gt;即后验分布$P(\theta|D)$<script type="math/tex; mode=display">P(\theta|D)=\frac{P(D|\theta)P(\theta)}{P(D)}</script></li>
 <li>$\theta$的先验分布$P(\theta)$</li>
 <li>$\theta$的后验分布$P(\theta|D)$</li>
 <li>可能性、似然度(likelihood)$P(D|\theta)$.未知变量服从$\theta$的前提下，观察序列$D$的条件概率</li>
@@ -449,6 +449,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
