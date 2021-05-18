@@ -35,13 +35,13 @@
     
     <tags>
       
-      <tag>教程</tag>
+      <tag>ADNI</tag>
       
       <tag>医疗</tag>
       
       <tag>数据库</tag>
       
-      <tag>ADNI</tag>
+      <tag>教程</tag>
       
     </tags>
     
@@ -185,13 +185,13 @@
     
     <tags>
       
-      <tag>教程</tag>
-      
-      <tag>MIMIC-III</tag>
-      
       <tag>医疗</tag>
       
       <tag>数据库</tag>
+      
+      <tag>教程</tag>
+      
+      <tag>MIMIC-III</tag>
       
     </tags>
     
@@ -216,9 +216,9 @@
     
     <tags>
       
-      <tag>Hexo</tag>
-      
       <tag>教程</tag>
+      
+      <tag>Hexo</tag>
       
     </tags>
     
