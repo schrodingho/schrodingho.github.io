@@ -20,7 +20,7 @@
   <meta name="author" content="Schrodingho">
   <meta name="keywords" content="">
   
-  <title>Review_of_probability_theory - BBQzone</title>
+  <title>Recursion_tutorial - BBQzone</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Review_of_probability_theory">
+            <span class="h2" id="subtitle" title="Recursion_tutorial">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-23 19:14" pubdate>
-        2021年3月23日 晚上
+      <time datetime="2021-05-02 19:48" pubdate>
+        2021年5月2日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      191 字
+      223 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -227,69 +227,33 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Review_of_probability_theory</h1>
+            <h1 style="display: none">Recursion_tutorial</h1>
             
             <div class="markdown-body">
-              <h1 id="概率论复习"><a href="#概率论复习" class="headerlink" title="概率论复习"></a>概率论复习</h1><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2><h3 id="切比雪夫定律-对概率作出很粗略的估计"><a href="#切比雪夫定律-对概率作出很粗略的估计" class="headerlink" title="切比雪夫定律(对概率作出很粗略的估计)"></a>切比雪夫定律(对概率作出很粗略的估计)</h3><p>随机变量$X$的<strong>数学期望$E(X)$和方差$D(X)$都存在</strong>,则对于任意常数$\varepsilon&gt;0$,下列不等式成立:</p>
+              <h1 id="搞明白递归"><a href="#搞明白递归" class="headerlink" title="搞明白递归"></a>搞明白递归</h1><p>摘自<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/mJ_jZZoak7uhItNgnfmZvQ">帅地学编程</a></p>
+<h3 id="递归三大要素"><a href="#递归三大要素" class="headerlink" title="递归三大要素"></a>递归三大要素</h3><ul>
+<li>明晰这个函数的用处<ul>
+<li>函数的功能，达到什么目的</li>
+</ul>
+</li>
+<li><p>寻找递归结束的条件</p>
 <ul>
-<li>$P{|X-E(X)|\geq\varepsilon}\leq\frac{D(X)}{\varepsilon^2}$</li>
-<li>$P{|X-E(X)|\leq\varepsilon}\geq1-\frac{D(X)}{\varepsilon^2}$</li>
-</ul>
-<blockquote>
-<h4 id="期望与方差的定义-连续随机变量"><a href="#期望与方差的定义-连续随机变量" class="headerlink" title="期望与方差的定义(连续随机变量)"></a>期望与方差的定义(连续随机变量)</h4><ul>
-<li>$E(X)=\int^{+\infty}_{-\infty}xf(x)dx$</li>
-<li>$D(X)=\int^{+\infty}_{-\infty}[x-E(X)]^2f_X(x)dx$</li>
-</ul>
-</blockquote>
-<h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>设随机变量序列$X_1,X_2,…,X_n,…$的每个数学期望$E(X_i)$,$i=1,2,…$均存在,如果对任意给定的正实数$\varepsilon$,有:</p>
-<script type="math/tex; mode=display">{\lim_{x \to -\infty}P\{|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|<\varepsilon\}=1}</script><p>则随机变量序列$X_1,X_2,…,X_n,…$服从大数定律</p>
-<h4 id="切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律"><a href="#切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律" class="headerlink" title="切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律"></a>切比雪夫大数定律、独立同分布大数定律、辛钦大数定律、伯努利大数定律</h4><h5 id="两个小结论"><a href="#两个小结论" class="headerlink" title="两个小结论"></a>两个小结论</h5><ul>
-<li>由独立同分布和辛钦大数定律-&gt; 相互独立同分布的随机变量序列$X<em>1,X_2,…,X_n,…$的算术平均值$\frac{1}{n}\sum</em>{n}^{i=1}X_i$在$n$充分大时具有稳定性，其稳定值为$E(X_i)=\mu$.这也就是工程应用中往往用大量测量值的算术平均值作为精确值的估计的理论依据</li>
-<li>伯努利大数定律以严格的数学形式表述了频率的稳定性</li>
-<li><strong>大数定律讲的是样本均值收敛到总体均值（就是期望</strong>）</li>
-</ul>
-<h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><ul>
-<li><strong>中心极限定理告诉我们，当样本量足够大时，样本均值的分布慢慢变成标准正态分布</strong></li>
-</ul>
-<h4 id="大数定律-与-中心极限定律-关系"><a href="#大数定律-与-中心极限定律-关系" class="headerlink" title="大数定律 与 中心极限定律 关系"></a>大数定律 与 中心极限定律 关系</h4><ul>
-<li>条件<ul>
-<li>大数定律: $E(|X|)&lt;\infty$</li>
-<li>中心极限定律: $E(X^2)&lt;\infty$</li>
+<li>找出递归的结束条件（当参数为傻时，递归结束，之后直接把结果返回）<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li>定理<ul>
-<li>大数定律: $\frac{1}{n}\sum_{i=1}^{n}X_i-E(X)\stackrel{P}\rightarrow0$</li>
-<li>中心极限定理: $\sqrt{n}(\frac{1}{n}\sum_{i=1}^{n}X_i-E(X))\stackrel{D}\rightarrow N(0,\sigma^2)$</li>
+<li><p>找出函数的等价关系</p>
+<ul>
+<li>不断缩小参数的范围，如:f(n)=n*f(n-1)<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(n&lt;=<span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-keyword">return</span> f(n<span class="hljs-number">-1</span>)*n;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<h3 id="抽样分布"><a href="#抽样分布" class="headerlink" title="抽样分布"></a>抽样分布</h3><h4 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h4><p>卡方分布：n 个标准正态分布随机变量的平方和的分布成为具有n个自由的卡方分布。分布形状取决于自由度n的大小，通常为不对称的右偏分布，自由度增大逐渐趋于对称。</p>
-<h4 id="T分布"><a href="#T分布" class="headerlink" title="T分布"></a>T分布</h4><p>t分布，用t表示样本均值经过标准化后的新随机变量，因此成为t分布，也成学生分布。设随机变量Z服从标准正太分布，X服从n个自由度的卡方分布，且Z与X独立。</p>
-<script type="math/tex; mode=display">T=\frac{Z}{\sqrt{X/n}}</script><p>服从自由度为n的t分布。t 分布类似于正态分布，比正态分布平坦而分散，随着自由度增大逐渐趋于正态分布</p>
-<h4 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h4><p>F分布是纪念著名统计学家R. A. Fisher 以其姓氏的第一个字母而命名的，它是两个卡方分布变量的比。设U服从自由度为n1的卡方分布，V服从自由度为n2的卡方分布，且U和V独立。则：</p>
-<script type="math/tex; mode=display">F=\frac{U/n_1}{V/n_2}</script><p>服从自由度为n1 和n2的F分布。<br><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/35756587/answer/846692080">摘自知乎-herain</a></p>
-<h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><h4 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h4><p>样本矩代替总体矩从而估计参数</p>
-<blockquote>
-<p>原理：类似于大数定律，样本数足够大时，样本均值会收敛于总体期望<br><br>(随机变量的一阶原点矩是期望，二阶中心矩是方差)</p>
-<h4 id="最大似然估计法"><a href="#最大似然估计法" class="headerlink" title="最大似然估计法"></a>最大似然估计法</h4><ul>
-<li>按照最大可能性的准则进行推断<ul>
-<li>即$Max \space L(p)$-&gt;$\hat{p}$（p的最大估计值）</li>
-</ul>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h4 id="反转链表递归（不大懂，循环法√）"><a href="#反转链表递归（不大懂，循环法√）" class="headerlink" title="反转链表递归（不大懂，循环法√）"></a>反转链表递归（不大懂，循环法√）</h4><h2 id="递归-gt-递推"><a href="#递归-gt-递推" class="headerlink" title="递归-&gt;递推"></a>递归-&gt;递推</h2><p>递归是从上往下递归的，直到递归到最底，再一层一层返回。</p>
+<ul>
+<li>eg:f(3)=f(2)+f(1)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>  <span class="hljs-keyword">if</span>(n&lt;=<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">return</span> n;<br>  <span class="hljs-keyword">int</span> f1=<span class="hljs-number">1</span>;<br>  <span class="hljs-keyword">int</span> f2=<span class="hljs-number">2</span>;<br>  <span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">3</span>;i&lt;=n;i++)&#123;<br>    sum=f1+f2;<br>    f1=f2;<br>    f2=sum;<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
-<li>若总体分布的概率密度函数为$P(X)$, 则似然函数为$L(p)=\Pi_{i=1}^nP(x_i)$</li>
 </ul>
-</blockquote>
-<h4 id="总结最大似然和贝叶斯"><a href="#总结最大似然和贝叶斯" class="headerlink" title="总结最大似然和贝叶斯"></a>总结最大似然和贝叶斯</h4><ul>
-<li>贝叶斯：贝叶斯推断方法是将未知参数看做是一个随机变量，他具备某种先验分布。在已知观测数据 $x$的基础上，可以利用贝叶斯公式来推导后验概率分布$p_{\theta|X}(\theta|x)$,这样就同时包含人的先验知识以及观测值$x$所能提供的关于$\theta$的新信息。</li>
-<li>经典统计：而经典统计方法是将未知参数$\theta$看作是一个常数，但是他是未知的，那么，这就需要去估计他了。经典统计的目标就是提出参数$\theta$的估计方法，并且保证其具有一定的性质。</li>
-<li>最大似然是一种基于经典统计的方法, 多次实验后寻找使似然函数$L(X;\theta)$取最大值的参数$\theta$(似然函数$L(x_1,x_2,…,x_n;\theta)$指的是随机变量$X$取到指定的这一组样本值：$x_1,x_2,…,x_n$时的概率大小。当未知的待估计的参数$\theta$取不同的值时，计算出来的概率的值会发生变化)</li>
-<li><strong>最大似然MLE解释</strong>：随机变量的概率分布已知（如正态分布），但分布的参数未知，需要我们去估计，把它记作$\theta$，需要我们去估计这个参数。-&gt;似然函数-&gt;让似然函数$L(X;\theta)$能娶到最大值的$\theta$</li>
-<li>详情见<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24124998/answer/1304697251">Maximum Likelihood</a><h3 id="估计量的优良性准则"><a href="#估计量的优良性准则" class="headerlink" title="估计量的优良性准则"></a>估计量的优良性准则</h3></li>
-<li>无偏性</li>
-<li>有效性</li>
-<li>相合性</li>
-</ul>
-<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23149768/answer/279244795">Hypothesis Evaluation</a><br>总结起来，$p$值就是对于观察到的数据$T_{obs}$，能获得的拒绝$H_0$的最小的显著性水平$\alpha$。也可以简单说成是错误地拒绝了$H_0$的概率。也就是Type 1 Error(第一类错误)。</p>
 
             </div>
             <hr>
@@ -300,9 +264,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%A4%8D%E4%B9%A0/">复习</a>
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+                      <a class="hover-with-bg" href="/tags/%E9%80%92%E5%BD%92/">递归</a>
                     
                   </div>
                 
@@ -319,18 +283,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/25/Bayesian-Review/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Bayesian_Review</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/03/15/some-interesting/">
-                        <span class="hidden-mobile">some_interesting</span>
+                      <a href="/2021/04/25/ADNI-Dataset/">
+                        <span class="hidden-mobile">ADNI_Dataset</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

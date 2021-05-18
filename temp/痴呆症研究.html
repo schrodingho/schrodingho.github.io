@@ -20,9 +20,23 @@
   <meta name="author" content="Schrodingho">
   <meta name="keywords" content="">
   
-  <title>标签 - 医疗 - BBQzone</title>
+  <title>page.title - BBQzone</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
 
 
 
@@ -50,7 +64,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -149,17 +163,13 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - 医疗">
+            <span class="h2" id="subtitle" title="page.title">
               
             </span>
 
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -177,31 +187,15 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2021</p>
-    
-    <a href="/2021/04/25/ADNI-Dataset/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">ADNI_Dataset</span>
-      <time style="float: right;">04-25</time>
-    </a>
-  
-    
-    <a href="/2021/03/04/Guide-of-MIMIC-III/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MIMIC-III 数据库使用指南(一)</span>
-      <time style="float: right;">03-04</time>
-    </a>
-  
-</div>
+<article class="page-content">
+  <h1 id="Alzheimer-Research"><a href="#Alzheimer-Research" class="headerlink" title="Alzheimer Research"></a>Alzheimer Research</h1><h3 id="Brain"><a href="#Brain" class="headerlink" title="Brain"></a>Brain</h3><p>目前的诊断方法结合<strong>患者病史、神经心理学检测和MRI</strong>来识别可能的病例，然而有效的做法仍然应用不一，缺乏敏感性和特异性。在这里，本文报告了一种可解释的深度学习策略，该策略从<strong>MRI、年龄、性别和简易智力状况</strong>检查量表(mini-mental state examination ,MMSE) 得分等多模式输入中描绘出独特的阿尔茨海默病特征（signatures）<br><br><br><br>尽管使用<strong>脑脊液（CSF）生物标志物以及PET淀粉样蛋白和tau成像</strong>来检测阿尔茨海默病病理已经取得了巨大的进展，但这些方式往往仍然局限于研究背景。目前的诊断标准依赖于高度熟练的神经科医生进行检查，包括询问患者病史，客观的认知评估，如简易智力状况检查量表（MMSE）或神经心理学测试，以及结构性MRI以排除某些疑似阿尔茨海默病的结果。临床病理研究表明，临床医生的诊断敏感性在70.9%～87.3%之间，特异性在44.3%～70.8%之间。虽然核磁共振揭示了阿尔茨海默病特有的大脑变化，如海马和顶叶萎缩，但这些特征被认为对基于影像学的阿尔茨海默病诊断缺乏特异性。</p>
+<p>为了解决这些局限性，<strong>本文开发了一种新型的深度学习框架，将完全卷积网络（FCN）与传统的多层感知器（MLP）连接起来，对阿尔茨海默病风险进行高分辨率可视化，然后用于准确预测阿尔茨海默病状态（图1）</strong>。作者选择了四个不同的数据集进行模型开发和验证：阿尔茨海默病神经影像学倡议（ADNI）数据集、澳大利亚老龄化影像、生物标志物和生活方式研究（AIBL）、弗雷明汉心脏研究（FHS）和国家阿尔茨海默病协调中心（NACC）（表1和补充图1）。模型预测与神经病理学研究结果的关联，以及与神经学家团队对模型性能的正面（head-to-head comparison）比较，都显示了深度学习框架的有效性。</p>
+<p>作者：思影</p>
+<h3 id="definition"><a href="#definition" class="headerlink" title="definition"></a>definition</h3><p>MRI:磁共振图像</p>
 
 
-
-
+  
+</article>
 
               </div>
             </div>
@@ -290,6 +284,8 @@
 
 
 
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

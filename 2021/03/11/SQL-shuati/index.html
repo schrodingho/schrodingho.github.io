@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      184 字
+      321 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      4
        分钟
     </span>
   
@@ -240,7 +240,23 @@
 <li><p>“Having”是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作，在Having中可以使用<strong>聚合函数</strong>。</p>
 </li>
 <li><p>SQL排序函数：<a target="_blank" rel="noopener" href="https://blog.csdn.net/shaiguchun9503/article/details/82349050">https://blog.csdn.net/shaiguchun9503/article/details/82349050</a></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-built_in">ROW_NUMBER</span>()<br><span class="hljs-built_in">RANK</span>()<br><span class="hljs-built_in">DENSE_RANK</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;xxx&#x27;</span> <span class="hljs-keyword">desc</span>)<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-built_in">ROW_NUMBER</span>() 顺排<br><span class="hljs-built_in">RANK</span>() 跳排<br><span class="hljs-built_in">DENSE_RANK</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;xxx&#x27;</span> <span class="hljs-keyword">desc</span>) 连排<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="SQL聚合函数"><a href="#SQL聚合函数" class="headerlink" title="SQL聚合函数"></a>SQL聚合函数</h2><ul>
+<li>除了 COUNT 以外，聚合函数忽略空值。</li>
+<li>聚合函数经常与 SELECT 语句的 GROUP BY 子句一同使用。</li>
+<li>典型聚合函数<ul>
+<li>avg()</li>
+<li>count():统计项目数(和group by一起使用)</li>
+<li>sum():纯数字列的计算</li>
+<li>max()</li>
+</ul>
+</li>
+<li>having(条件，一般在group by后)可以和聚合函数一起用，但是where无法和聚合函数一起使用</li>
+</ul>
+<h2 id="做题笔记"><a href="#做题笔记" class="headerlink" title="做题笔记"></a>做题笔记</h2><ul>
+<li>null和in的用法<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/32c53d06443346f4a2f2ca733c19660c?tpId=82&amp;tags=&amp;title=&amp;diffculty=0&amp;judgeStatus=0&amp;rp=1&amp;tab=answerKey">https://www.nowcoder.com/practice/32c53d06443346f4a2f2ca733c19660c?tpId=82&amp;tags=&amp;title=&amp;diffculty=0&amp;judgeStatus=0&amp;rp=1&amp;tab=answerKey</a></li>
 </ul>
 
             </div>

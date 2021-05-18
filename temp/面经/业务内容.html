@@ -20,9 +20,23 @@
   <meta name="author" content="Schrodingho">
   <meta name="keywords" content="">
   
-  <title>标签 - 医疗 - BBQzone</title>
+  <title>page.title - BBQzone</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
 
 
 
@@ -50,7 +64,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -149,17 +163,13 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - 医疗">
+            <span class="h2" id="subtitle" title="page.title">
               
             </span>
 
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -177,31 +187,194 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2021</p>
-    
-    <a href="/2021/04/25/ADNI-Dataset/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">ADNI_Dataset</span>
-      <time style="float: right;">04-25</time>
-    </a>
-  
-    
-    <a href="/2021/03/04/Guide-of-MIMIC-III/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MIMIC-III 数据库使用指南(一)</span>
-      <time style="float: right;">03-04</time>
-    </a>
-  
+<article class="page-content">
+  <h3 id="游戏匹配机制（ELO机制）"><a href="#游戏匹配机制（ELO机制）" class="headerlink" title="游戏匹配机制（ELO机制）"></a>游戏匹配机制（ELO机制）</h3><ul>
+<li>假设：<ul>
+<li>某个玩家，在某一分段区间内的波动属于正常现象</li>
+<li>在某一分段区间内的玩家，水平大致相同，胜出的期望也大致相同</li>
+</ul>
+</li>
+<li>优化方向<ul>
+<li>保证匹配上的局胜负期望在50%左右</li>
+<li>如果是多人匹配，避免出现菜鸡被对面高手吊打</li>
+<li>实时匹配的速度要快</li>
+</ul>
+</li>
+<li>统计玩家的胜负波动情况<ul>
+<li>采用统计学手段，用正态函数去拟合玩家在比赛时的波动表现，其概率密度函数可以表示为：<br><br>$P(x)=\frac{1}{2}+\int_0^x\frac{1}{\sigma\sqrt{2\pi}}\cdot e^-\frac{x^2}{2\sigma^2}dx$</li>
+<li>根据双方的天梯积分<strong>MMR</strong>：A为$R_a$，B为$R_b$，那么a对b的期望胜率是：<br><br>$E_a=\frac{1}{1+10^{(R_b-R_a)/400}}$<br><br>$R_b\geq R_a\rightarrow 0<E_a\leq 0.5$<br><br>$R_b<R_a\rightarrow 0.5<E_a<1$<br><br>于是概率密度函数（400算法）:<br><br>$P(x)=\frac{1}{1+10^{-\frac{x}{400}}}$<br><br>$x为a、b分差, P(x)是a对b的胜率$<br></li>
+</ul>
+</li>
+<li>定级赛：MMR预测（分数迭代）<ul>
+<li>根据近k场比赛数据来预测MMR</li>
+<li>$R_n=R_o+K*(W-P(D))$</li>
+</ul>
+</li>
+<li><blockquote>
+<p>Rn是玩家比赛结束后的新的排位分值。<br><br>Ro是比赛前玩家的排位分。<br><br>K是一个加成系数，由玩家当前分值水平决定（分值越高K越小）。<br><br>W是玩家实际对局结果得分（赢=1，输=0）。<br><br>P（D）是预期胜率。</p>
+<h4 id="ELO应用"><a href="#ELO应用" class="headerlink" title="ELO应用"></a>ELO应用</h4></blockquote>
+</li>
+<li>匹配策略（相近分差（排序）匹配）</li>
+<li>多次比赛快速收敛（随着比赛次数的增多，玩家的游戏分数愈加接近其真实分数）<ol>
+<li>定位赛阶段：新玩家采用定级赛，K值会被乘上一个系数</li>
+<li>玩家实力波动：匹配索敌：【玩家游戏分数】+【连胜/连败分数加值】</li>
+<li>休眠期分数衰减</li>
+</ol>
+</li>
+<li>多对多匹配<ul>
+<li>$R_n=R_o+K*(W-P(D))$中<br><br>$D=自己分数-\frac{自己分数}{我方分数}\times敌方总分$<h4 id="ELO机制深入"><a href="#ELO机制深入" class="headerlink" title="ELO机制深入"></a>ELO机制深入</h4></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>分数：排位+匹配赛（排位权重&gt;匹配）</li>
+<li>画像：历史画像+短期表现=战力=总胜率、英雄覆盖率、熟练度</li>
+<li>排序：根据分数、画像进行定级、排序</li>
+</ol>
+<h3 id="业务指标理解-I"><a href="#业务指标理解-I" class="headerlink" title="业务指标理解 I"></a>业务指标理解 I</h3><ul>
+<li>DAU 日活用户<ul>
+<li>DAU=新增用户数+老用户数*留存率</li>
+<li>异动原因：<ul>
+<li>内因：产品、渠道、活动、运营策略</li>
+<li>外因：政治、经济、社会、技术</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>游戏分析：游戏同比收入下降<ul>
+<li>前期准备：来源与准确性</li>
+<li>游戏收入=付费用户数*客单价（每用户平均收入）</li>
+<li>与历史、行业数据进行对比</li>
+<li>分析原因：<ul>
+<li>游戏收入=付费用户数x客单价，付费用户数=活跃用户数x付费转换率</li>
+<li>活跃用户数下降、付费转换率下降，客单价下降</li>
+<li>分析内外因</li>
+</ul>
+</li>
+<li>假设检验：对相关问题设计假设，进行样本收集，假设检验，最终得出结论。</li>
+</ul>
+</li>
+<li>FIFA（球员能力与身价）<ul>
+<li>考虑因素：<ul>
+<li>Football skill<ul>
+<li>ball skills</li>
+<li>passing</li>
+<li>defense</li>
+<li>mental</li>
+<li>physical</li>
+<li>shooting</li>
+<li>goalkeeping</li>
+</ul>
+</li>
+<li>Position</li>
+<li>Age</li>
+<li>Media Coverage</li>
+</ul>
+</li>
+<li>heatmap(correlation heatmap)<ul>
+<li>高相关：射术、防守、心理、传球、体力、位置</li>
+<li>低相关：身高、体重、年龄、擅长足</li>
+<li>特殊：GK（去除GK）</li>
+</ul>
+</li>
+<li>预测：logistic regression；去除异常和低相关值<ul>
+<li>R^2=0.836,mae=0.532</li>
+</ul>
+</li>
+<li>细化模型，各个位置、联赛等等</li>
+</ul>
+</li>
+</ul>
+<h3 id="业务指标理解-II"><a href="#业务指标理解-II" class="headerlink" title="业务指标理解 II"></a>业务指标理解 II</h3><ul>
+<li>游戏运营指标<ul>
+<li>付费率</li>
+<li>ARPU（平均用户收入=收入/活跃用户数）<ul>
+<li>ARPU ↑，用户数 ↓，总收入 -<ul>
+<li>免费玩家和小R流失</li>
+</ul>
+</li>
+<li>ARPU ↑，用户数 ↓，总收入 ↓<ul>
+<li>游戏衰退，开始流失</li>
+</ul>
+</li>
+<li>ARPU ↓，用户数 -，付费率 -<ul>
+<li>对免费玩家友好</li>
+</ul>
+</li>
+<li>ARPU ↑，用户数 ↓，总收入 ↓<br>- </li>
+</ul>
+</li>
+<li>ARPPU（平均每付费用户收入=收入/付费用户数）</li>
+<li>付费率低，但是ARPPU高，说明要讨好付费用户</li>
+<li>游戏收入=付费用户数x客单价，付费用户数=活跃用户数x付费转换率</li>
+</ul>
+</li>
+<li>新增用户分析(活动投放)<ul>
+<li>投放和转化率<ul>
+<li>自然用户</li>
+<li>推广用户</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>留存率<ul>
+<li>次日留存率（对新手是否友好，激励大不大）</li>
+<li>7日留存率（游戏内容）</li>
+</ul>
+</li>
+<li>渠道用户数据<ul>
+<li>集中力量做重要的渠道（平台、手机）</li>
+</ul>
+</li>
+<li>付费用户趋势<ul>
+<li>老用户付费提升、新用户付费提升</li>
+<li>付费额度（根据消费分层制定策略）</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>用户群体</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低次数小R</td>
+<td>各方面激励和刺激</td>
+</tr>
+<tr>
+<td>高次数小R</td>
+<td>刺激付费</td>
+</tr>
+<tr>
+<td>普通大R</td>
+<td>留住玩家</td>
+</tr>
+<tr>
+<td>重要大R</td>
+<td>激发付费次数</td>
+</tr>
+<tr>
+<td>核心大R</td>
+<td>维持好</td>
+</tr>
+</tbody>
+</table>
 </div>
+<ul>
+<li>游戏时长<ul>
+<li>COC（皇室类）：设计的循环是：上线准备——一局战斗——下线——恢复补兵——上线准备——一局战斗</li>
+<li>启动次数</li>
+</ul>
+</li>
+</ul>
 
 
-
-
+  
+</article>
 
               </div>
             </div>
@@ -290,6 +463,8 @@
 
 
 
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

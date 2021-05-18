@@ -20,9 +20,23 @@
   <meta name="author" content="Schrodingho">
   <meta name="keywords" content="">
   
-  <title>标签 - 医疗 - BBQzone</title>
+  <title>page.title - BBQzone</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
 
 
 
@@ -50,7 +64,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -149,17 +163,13 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - 医疗">
+            <span class="h2" id="subtitle" title="page.title">
               
             </span>
 
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -177,31 +187,72 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2021</p>
-    
-    <a href="/2021/04/25/ADNI-Dataset/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">ADNI_Dataset</span>
-      <time style="float: right;">04-25</time>
-    </a>
-  
-    
-    <a href="/2021/03/04/Guide-of-MIMIC-III/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MIMIC-III 数据库使用指南(一)</span>
-      <time style="float: right;">03-04</time>
-    </a>
-  
-</div>
+<article class="page-content">
+  <h1 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h1><h3 id="几种分布"><a href="#几种分布" class="headerlink" title="几种分布"></a>几种分布</h3><ol>
+<li>Gaussian Distribution</li>
+<li>Bernoulli Distribution</li>
+<li>多项分布</li>
+<li>卡方、F、T分布的检验<ol>
+<li>单个正态总体均值$\mu$的检验<ol>
+<li>总体方差已知：正态U检验</li>
+<li>总体方差未知：t检验法</li>
+</ol>
+</li>
+<li>单个正态总体方差$\sigma^2$的检验<ol>
+<li>总体均值已知：卡方检验</li>
+</ol>
+</li>
+<li>两个正态总体均值差$\mu_1-\mu_2$的检验<ol>
+<li>总体方差已知：两样本U检验法</li>
+<li>总体方差未知：两样本t检验法</li>
+</ol>
+</li>
+<li>两个正态总体方差比$\frac{\sigma_1^2}{\sigma_2^2}$的检验<ol>
+<li>总体均值已知，采用F分布进行检验</li>
+</ol>
+</li>
+<li>大样本检验</li>
+</ol>
+</li>
+</ol>
+<h3 id="假设检验与AB测试"><a href="#假设检验与AB测试" class="headerlink" title="假设检验与AB测试"></a>假设检验与AB测试</h3><p>参考<a target="_blank" rel="noopener" href="https://www.sohu.com/a/245674178_466874">假设检验</a></p>
+<ul>
+<li>我们可以从总体当中，按照一定的方法抽取部分的研究对象作为研究，而这部分的抽取对象，我们称之为样本。</li>
+<li>由于总体分布未知，通过抽取样本数据进行测量，从而对总体作出理论的方法，我们称之为统计推断。</li>
+<li>例如，从过往的资料中，我们知道2016年大学毕业生平均薪酬为4765元，标准差为300元，现在从2017年的大学毕业生中随机抽取10000名，调查得到其平均薪酬为4912元，现在我们想知道2017年大学毕业生的平均薪酬和2016年相比是否有显著差异？<strong>假设检验的核心正是判断这个差异是否足以通过抽样的随机性来解释。</strong><ul>
+<li>首先我们构造两个假设，第一个假设称之为原假设，也被称为H0，例如假定前后两个总体没有显著差异。<br><center>$u=u_0$</center></li>
+<li>第二个假设称之为备设假设，H1，假定前后两个总体有显著差异。<br><center>$u\neq u0$</center></li>
+<li><strong>假设检验是一种“小概率反证”的思想。即原假设成立的前提下，小概率事件在一次试验中不太可能发生，如果发生了，则认为原假设并不成立。</strong> 小概率事件的阈值，我们称之为检验水平，一般情况下我们取，即把发生概率小于0.05的事件称之为小概率事件。相反，如果我们假设检验中，没有拒绝原假设，并不意味着我们完全接受原假设，只是说明样本数据的“证据”不足，暂时不拒绝原假设。<h5 id="简化版"><a href="#简化版" class="headerlink" title="简化版"></a>简化版</h5></li>
+</ul>
+</li>
+<li>判断一个问题-&gt;两个假设</li>
+<li>由中心极限定理，合理足够多的样本可以代表总体</li>
+<li>p值：在H0假设下的概率</li>
+<li>判断标准：p&lt;5%即否定H0假设（有极大的把握）【显著水平】</li>
+<li>弃真（第一类错误）与纳伪（第二类错误），设置$\alpha=0.05$，先保证第一类错误的概率尽量小，在使第二类错误的概率尽可能的小。<strong>增加样本容量，可以减少两类错误</strong><h4 id="AB测试"><a href="#AB测试" class="headerlink" title="AB测试"></a>AB测试</h4></li>
+<li><strong>AB测试其实就是同质样本组的对照实验</strong>。对其中一个组做出某种改动，然后我们来观测这个改动对于我们所关注的核心指标是否有显著的影响。那么在这个实验当中，我们的原假设就是这项改动并不会对我们所关注的核心指标有显著的影响。如果我们在做完实验之后，后发现P值足够小，我们则推翻原假设，证明这项改动会对我们所关注的核心指标产生显著影响，那么这个就是ab测试的原理。</li>
+<li>辛普森悖论<ul>
+<li>辛普森悖论指的是在某种条件下，我们所观测的两组数据分别讨论时，都会满足某种同样性质，可是当我们把两组数据集进行合并去观察整体时，就会得出截然相反的结论。（<strong>分组优势，总评失势</strong>）</li>
+<li>解决：<strong>注意样本的选择</strong>。举个实际的例子，比如说我们现在要观测用户参与活动后领取福利的入口放在哪个位置更容易被用户点击，那我们在这里实验组和对照组所确定的用户都一定要是参与活动用户，而不能选择整体的大盘用户去作为我们的观测基准。<h3 id="大数定律于中心极限定理"><a href="#大数定律于中心极限定理" class="headerlink" title="大数定律于中心极限定理"></a>大数定律于中心极限定理</h3></li>
+</ul>
+</li>
+<li>大数：随着样本的增多，样本均值接近于总体均值</li>
+<li>中心：随着样本的增多，样本分布接近于正态分布<h3 id="最大似然"><a href="#最大似然" class="headerlink" title="最大似然"></a>最大似然</h3>Maximize似然函数，求参数</li>
+</ul>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><ul>
+<li>方差、标准差</li>
+<li>独立事件$P(AB)=P(A)P(B)$<br><br>$P(B|A)=\frac{P(AB)}{P(A)}-&gt;P(AB)=P(B|A)P(A)-&gt;P(B|A)=P(B)$即A发生不影响B发生的概率c</li>
+<li>置信区间：统计的误差范围。置信水平95%，即做100次抽样，会有95个置信区间包含了总体平均值。<ul>
+<li>置信水平的设定是有影响的——如果我们对置信水平要求过高，我们可能会拒绝实际上是正确的理论（犯了I类错误）；</li>
+<li>置信水平要求过低，我们可能会接受错误的理论（犯了II类错误）</li>
+<li>并没有一个万全之策能够让犯两种错误的可能性同时降低，我们必须做出选择。鉴于我们更加不喜欢犯II类错误，所以我们<strong>习惯于把置信水平设置在高水平</strong>。</li>
+</ul>
+</li>
+</ul>
 
 
-
-
+  
+</article>
 
               </div>
             </div>
@@ -290,6 +341,8 @@
 
 
 
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
