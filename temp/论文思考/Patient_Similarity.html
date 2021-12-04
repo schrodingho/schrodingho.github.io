@@ -190,6 +190,14 @@
 <article class="page-content">
   <h3 id="base-diagnosis-methods-medicine-recommendations"><a href="#base-diagnosis-methods-medicine-recommendations" class="headerlink" title="base: diagnosis /methods /medicine recommendations"></a>base: diagnosis /methods /medicine recommendations</h3><p>增强推荐药物的coverage，至于新药发现或者新的有效药物，暂时无思路<br>medical scenario</p>
 <h3 id="Case-Study"><a href="#Case-Study" class="headerlink" title="Case Study"></a>Case Study</h3><p>We choose a patient from test dataset.</p>
+<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><ul>
+<li>索引出药物的ATC号-&gt;先索引矩阵中药物号-&gt;-1-&gt;药物字典中查询</li>
+<li>expo-mf和serec缓一缓</li>
+<li>expo-mf可以尝试新的方法</li>
+</ul>
+<p>We choose two patients from test dataset to demonstrate the effects of our model in medication recommendation. As shown in Table \ref{case}, \textbf{PSMR-MNAR} performs better than other methods with the integration of similar patients’ medication. For the first patient, PSMR-MNAR provides two more effective medications N02B(Analgesics and Antipyretics), A01A(Stomatological preparations) than MR-MNAR. For the second patient with a diagnosis of Paralysis agitans, compared with \textbf{MR-MNAR}’s recommendation,  \textbf{PSMR-MNAR} recommends two more medications C03C(High-ceiling) diuretics), A12B(Potassium).</p>
+<p>for the first patient, PSMR-MNAR recommends two more </p>
+<p>the first patient has a diagnosis of Malignant Neoplasm of Prostate. The ground truth medications and the recommended medications by different methods are listed in the table. It is clear that \textbf{PSMR-MNAR} performs better than other methods with the integration of similar patients’ medication. In detail, compared with \textbf{MR-MNAR}’s recommendation,  \textbf{PSMR-MNAR} recommends two more effective medications N02B(Analgesics and Antipyretics), A01A(Stomatological preparations). </p>
 
 
   

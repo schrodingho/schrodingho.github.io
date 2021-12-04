@@ -193,7 +193,10 @@
 <li>利用相似病人的信息进行，对当前病人的服药进行补充</li>
 <li>非随机缺失。三种形式：完全随机缺失（缺失数据与观测和未观测数据无关）、随机缺失（缺失数据与观测到的数据有关）、非随机缺失（缺失数据与缺失数据本身有关）<br>（一些论文提到对非随机缺失建模，能够提高模型的效果）</li>
 <li>概率图模型+贝叶斯（与统计派不同，贝叶斯派的观点）</li>
-<li>变分推断：步骤+原理（CAVI,SVI）<ul>
+<li><p>概率图模型：我们构建一个图，用观测结点表示观测到的数据，用隐含结点表示潜在的知识，用边来描述知识与数据的相互关系，最后获得一个概率分布。给定概率分布之后，通过进行两个任务：inference (给定观测结点，推断隐含结点的后验分布）和learning(学习这个概率分布的参数），来获取知识。PGM的强大之处在于，不管数据和知识多复杂，我们的处理手段是一样的：建一个图，定义一个概率分布，进行inference和learning。这对于描述复杂的实际问题，构建大型的人工智能系统来说，是非常重要的。</p>
+</li>
+<li><p>变分推断：步骤+原理（CAVI,SVI）</p>
+<ul>
 <li>我们的原始目标是，需要<strong>根据已有数据推断需要的分布p</strong>；<strong>当p不容易表达，不能直接求解时，可以尝试用变分推断的方法</strong>即，寻找容易表达和<em>求解的分布q</em>，<strong>当q和p的差距很小的时候，q就可以作为p的近似分布</strong>，成为输出结果了。</li>
 </ul>
 </li>
@@ -221,9 +224,35 @@
 <li>基本模型是的定义在特征空间上的间隔最大的线性分类器（二分类）</li>
 <li>超平面$X^TW+b=0$</li>
 <li>间隔最大化$margin=\rho=\frac{2}{||W||}$&lt;=&gt;max $\rho^2$&lt;=&gt;min $\frac{1}{2}||W^2||$</li>
+<li>minimize $\frac{1}{2}||w||^2$(引入拉格朗日乘子)</li>
 </ul>
 </li>
 <li>FIFA</li>
+<li>Word2Vec<ul>
+<li>一种word embedding的方式<ul>
+<li>embedding:降维算法（one-hot降维），降维的原理就是矩阵乘法。</li>
+</ul>
+</li>
+<li>f(x)-&gt;y，x是一个句子里的词语，y是这个词语的上下文词语。x,y放在一起是不是人话。</li>
+<li>训练预测模型，提取参数-&gt;词向量</li>
+<li>skip-gram和cbow<ul>
+<li>skip-gram：词语输入预测周围的上下文</li>
+<li>cbow：上下文词语输入预测中心词语</li>
+</ul>
+</li>
+<li>input-&gt;hidden-&gt;output<ul>
+<li>input: x: one-hot vector</li>
+<li>input and hidden: $w(v\times n)$</li>
+<li>hidden and output: $w(n \times v)$</li>
+</ul>
+</li>
+<li>target function:<ul>
+<li>Maximize $p(w_{t+j}|w_t)$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DSSM</li>
 </ul>
 
 

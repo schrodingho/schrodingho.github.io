@@ -4,6 +4,50 @@
   
   
   <entry>
+    <title>Lovers In Japan</title>
+    <link href="/2021/12/04/Lovers-In-Japan/"/>
+    <url>/2021/12/04/Lovers-In-Japan/</url>
+    
+    <content type="html"><![CDATA[<p style="font-family:Chaparral Pro Light">Lovers keep on the road you're on<br>Runners until the race is run<br>Soldiers, you've got to soldier on<br>Sometimes even the right is wrong<br></p><p style="font-family:Chaparral Pro Light">They are turning my head out<br>To see what I'm all about<br>Keeping my head down<br>To see what it feels like now<br>But I have no doubt<br>One day we're gonna get out<br></p><p style="font-family:Chaparral Pro Light">Tonight maybe we're gonna run<br>Dreaming of the Osaka sun<br>Oh, Oh<br>Dreaming of when the morning comes<br>They are turning my head out<br>To see what I'm all about<br>Keeping my head down<br>To see what it feels like now<br>But I have no doubt<br>One day the sun will come out<br></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>音乐</tag>
+      
+      <tag>歌词</tag>
+      
+      <tag>coldplay</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ML_and_BA</title>
+    <link href="/2021/09/02/ML-and-BA/"/>
+    <url>/2021/09/02/ML-and-BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="机器学习与商业分析"><a href="#机器学习与商业分析" class="headerlink" title="机器学习与商业分析"></a>机器学习与商业分析</h1><h3 id="Monsanto-Example"><a href="#Monsanto-Example" class="headerlink" title="Monsanto Example"></a>Monsanto Example</h3><ul><li>Func: 播种、施肥、灌溉、病虫害防治</li><li>Data: 气象、天气、降雨、地质土壤调查==&gt;预测未来对农业生成造成破坏的情况，帮助农民预测作物产量</li></ul><h4 id="Solve-Problem"><a href="#Solve-Problem" class="headerlink" title="Solve Problem"></a>Solve Problem</h4><h5 id="Generative-Model"><a href="#Generative-Model" class="headerlink" title="Generative Model"></a>Generative Model</h5><ul><li>案例: 通过降水、温度、土壤情况等多维数据，来预测是否该浇水(施肥\灭虫)</li><li>数据收集与构成:<ul><li>收集浇水前和未浇水前n天的降水, 温度 ,土壤生化信息, 形成<br>$X:{降水, 温度, 土壤生化信息} C:{是否病虫害}$</li></ul></li><li>标签: $C={c_1,c_2}$</li><li>输入数据(特征): $X={x_1,x_2,…,x_n}$</li><li>目标: 二分类 $P(C|X)$</li><li>采用贝叶斯模型: $P(c_1|X)=\frac{P(X|c_1)P(c_1)}{P(X|c_1)P(c_1)+P(X|c_2)P(c_2)}$</li><li>假设$c_1$类别输入训练数据的分布:$X\sim N(\mu,\Sigma)$ 【独立同分布】(输入样本$X$的特征向量，输出从该分布中被取样出的概率，即$P(X|c_1)$) </li><li>极大似然估计: 通过极大似然估计找到数据处于某一分布概率最大的分布.<ul><li>$L(\mu,\Sigma)=\prod<em>{k=1}^{n} f</em>{\mu,\Sigma}(x^k)$</li><li>$\mu^{<em>},\Sigma^{</em>}=argmax_{\mu,\Sigma}L(\mu,\Sigma)$【在这种参数情况下，产生$c_1$样本的概率是最大的】</li></ul></li><li>由$\mu^{<em>},\Sigma^{</em>}$即可得$P(X|c_1)$</li><li>通过$P(c_1|X)=\frac{P(X|c_1)P(c_1)}{P(X|c_1)P(c_1)+P(X|c_2)P(c_2)}$计算类别概率</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>机器学习</tag>
+      
+      <tag>商业分析</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Recursion_tutorial</title>
     <link href="/2021/05/02/Recursion-tutorial/"/>
     <url>/2021/05/02/Recursion-tutorial/</url>
