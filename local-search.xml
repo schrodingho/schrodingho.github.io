@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>Machine Learning Guide</title>
+    <title>机器学习优质教程</title>
     <link href="/2022/03/03/Statistics-Machine-Learning-Guide/"/>
     <url>/2022/03/03/Statistics-Machine-Learning-Guide/</url>
     
-    <content type="html"><![CDATA[<h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><ul><li><a href="https://github.com/Sophia-11/Machine-Learning-Notes/tree/master/ch7">机器学习-周志华(第七章)</a><h3 id="EM"><a href="#EM" class="headerlink" title="EM"></a>EM</h3></li><li><a href="https://zhuanlan.zhihu.com/p/36331115">MLE-&gt;EM</a><h3 id="变分推断"><a href="#变分推断" class="headerlink" title="变分推断"></a>变分推断</h3></li><li><a href="http://cairohy.github.io/2018/02/28/vi/VI-1/">变分推断推导</a></li><li><a href="http://cairohy.github.io/2018/03/03/vi/VI-2/">贝叶斯GMM-变分推断</a></li></ul><h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><ul><li><a href="https://github.com/Sophia-11/Machine-Learning-Notes/tree/master/ch6">机器学习-周志华(第六章)</a></li></ul><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><ul><li><a href="https://github.com/Sophia-11/Machine-Learning-Notes/tree/master/ch4">机器学习-周志华(第四章)</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="机器学习优质教程"><a href="#机器学习优质教程" class="headerlink" title="机器学习优质教程"></a>机器学习优质教程</h1><h3 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h3><ul><li><a href="https://github.com/Sophia-11/Machine-Learning-Notes/tree/master/ch7">机器学习-周志华(第七章)</a><h3 id="EM"><a href="#EM" class="headerlink" title="EM"></a>EM</h3></li><li><a href="https://zhuanlan.zhihu.com/p/36331115">MLE-&gt;EM</a><h3 id="变分推断"><a href="#变分推断" class="headerlink" title="变分推断"></a>变分推断</h3></li><li><a href="http://cairohy.github.io/2018/02/28/vi/VI-1/">变分推断推导</a></li><li><a href="http://cairohy.github.io/2018/03/03/vi/VI-2/">贝叶斯GMM-变分推断</a></li></ul><h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><ul><li><a href="https://github.com/Sophia-11/Machine-Learning-Notes/tree/master/ch6">机器学习-周志华(第六章)</a></li></ul><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><ul><li><a href="https://github.com/Sophia-11/Machine-Learning-Notes/tree/master/ch4">机器学习-周志华(第四章)</a></li><li><a href="https://www.cnblogs.com/leoo2sk/archive/2010/09/19/decision-tree.html">ID3\C4.5</a></li></ul>]]></content>
     
     
     
