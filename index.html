@@ -4,104 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Personal Page</title>
-    <!-- Tailwind CSS CDN for utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles to enhance the old-style feel and ensure responsiveness */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f0f0; /* Light gray background */
-            color: #333; /* Dark gray text */
-        }
-
-        .container {
-            max-width: 800px; /* Max width for content, typical of older sites */
-            margin: 2rem auto; /* Center the container */
-            padding: 1.5rem;
-            background-color: #ffffff; /* White background for the main content area */
-            border: 1px solid #ccc; /* Simple border */
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-            border-radius: 8px; /* Rounded corners for a softer look */
-        }
-
-        h1, h2 {
-            color: #0056b3; /* A classic blue for headers */
-        }
-
-        a {
-            color: #007bff; /* Standard link blue */
-            text-decoration: none; /* No underline by default */
-        }
-
-        a:hover {
-            text-decoration: underline; /* Underline on hover for interactivity */
-            color: #0056b3; /* Darker blue on hover */
-        }
-
-        .section-link {
-            display: block; /* Each link on its own line */
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            padding: 0.25rem 0;
-        }
-
-        .footer {
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px dashed #ccc; /* Dashed line for a vintage feel */
-            padding-top: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="p-4 md:p-8">
     <div class="container">
-        <!-- Main Header Section -->
         <header class="text-center mb-8">
             <h1 class="text-4xl font-bold mb-2">Welcome to My Personal Page!</h1>
             <p class="text-lg text-gray-700">A simple corner of the internet.</p>
         </header>
 
-        <!-- About Me Section -->
         <section class="mb-8">
             <h2 class="text-2xl font-bold mb-4">About Me</h2>
             <p class="leading-relaxed mb-4">
-                Hello there! I'm [Your Name], and this is my humble personal website.
-                I'm a [Your Profession/Interest, e.g., "software developer," "student of history," "enthusiast of classic literature"].
-                I created this page to share a bit about myself, my projects, and my thoughts with the world.
+                Hello there! I'm [Your Name], and this is my personal website. I'm a system software development engineer.
             </p>
             <p class="leading-relaxed">
-                You won't find flashy animations or complex layouts here, just good old web content.
-                Thanks for stopping by!
+                <a href="https://github.com/schrodingho" class="text-blue-600 hover:underline">[GitHub]</a>
             </p>
         </section>
 
-        <!-- Navigation/Links Section -->
+
+        <!-- <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Projects</h2>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Project Title 1: [Brief Title]</h3>
+                <p class="text-gray-700 mb-2">[Year/Duration, e.g., "2023-2024" or "Fall 2023"]</p>
+                <p class="leading-relaxed">
+                    [Brief description of the project, including its objective, methodologies used, and key outcomes. For example: "Developed a novel algorithm for real-time anomaly detection in large datasets, achieving 95% accuracy on benchmark tests. Utilized Python with TensorFlow and scikit-learn."]
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2">
+                    <li>**Key Contribution:** [Specific contribution, e.g., "Designed the data pre-processing pipeline."]</li>
+                    <li>**Technologies Used:** [e.g., "Python, TensorFlow, AWS Sagemaker"]</li>
+                    <li><a href="#" class="text-blue-600 hover:underline">[Link to Project Repository/Details (if applicable)]</a></li>
+                </ul>
+            </div>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Project Title 2: [Brief Title]</h3>
+                <p class="text-gray-700 mb-2">[Year/Duration, e.g., "2022" or "Spring 2022"]</p>
+                <p class="leading-relaxed">
+                    [Brief description of the project. For example: "Conducted a statistical analysis on climate data to identify long-term trends in regional precipitation. Involved data collection from NOAA and statistical modeling in R."]
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2">
+                    <li>**Key Contribution:** [Specific contribution, e.g., "Developed custom visualization scripts."]</li>
+                    <li>**Technologies Used:** [e.g., "R, ggplot2, Excel"]</li>
+                    <li><a href="#" class="text-blue-600 hover:underline">[Link to Project Report/Details (if applicable)]</a></li>
+                </ul>
+            </div>
+            </section> -->
+
+
         <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Explore My World</h2>
+            <h2 class="text-2xl font-bold mb-4">Publications</h2>
+            <div class="mb-4">
+                <p class="leading-relaxed">
+                    [1] Xue, D., Fan, X., Chen, T., Lan, G., & Song, Q. (2024). Leveraging Foundation Models for Zero-Shot IoT Sensing. 27th European Conference on Artificial Intelligence, 19-24 October 2024, Santiago de Compostela, Spain.                    
+                </p>
+                <a href="https://ebooks.iospress.nl/doi/10.3233/FAIA240942" class="text-blue-600 hover:underline">[ECAI]</a> <a href="https://arxiv.org/abs/2407.19893" class="text-blue-600 hover:underline">[arXiv]</a> <a href="https://github.com/schrodingho/FM_ZSL_IoT" class="text-blue-600 hover:underline">[Code]</a>
+
+                <!-- <p class="text-gray-700 ml-5">[Brief note on your role, e.g., "First author, focused on methodology and experimental validation."]</p> -->
+            </div>
+            <!-- <div class="mb-4">
+                <p class="leading-relaxed">
+                    [2] **[Author List]**. "[Full Title of Another Publication]." *[Another Journal/Conference]*, [Year of Publication].
+                    <a href="#" class="text-blue-600 hover:underline">[DOI/Link to paper]</a>
+                </p>
+                <p class="text-gray-700 ml-5">[Brief note on your role, e.g., "Co-author, contributed to data analysis."]</p>
+            </div> -->
+            </section>
+
+
+        <!-- <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Research Interests</h2>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                <li>[Specific academic interest 1, e.g., "Explainable Artificial Intelligence (XAI)"]</li>
+                <li>[Specific academic interest 2, e.g., "Natural Language Processing (NLP) for low-resource languages"]</li>
+                <li>[Specific academic interest 3, e.g., "Sustainable Energy Systems and Policy"]</li>
+                <li>[Specific academic interest 4, e.g., "Computational Neuroscience"]</li>
+            </ul>
+            <h2 class="text-2xl font-bold mb-4 mt-6">Personal Interests</h2>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                <li>[Personal hobby/interest 1, e.g., "Hiking and nature photography"]</li>
+                <li>[Personal hobby/interest 2, e.g., "Reading classic literature"]</li>
+                <li>[Personal hobby/interest 3, e.g., "Learning new languages"]</li>
+            </ul>
+        </section> -->
+
+
+        <!-- <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Connect & Learn More</h2>
             <nav>
                 <ul>
-                    <li><a href="#" class="section-link">About Me (detailed)</a></li>
-                    <li><a href="#" class="section-link">My Projects & Portfolio</a></li>
-                    <li><a href="#" class="section-link">Blog / Articles</a></li>
+                    <li><a href="#" class="section-link">My Academic CV/Resume</a></li>
+                    <li><a href="#" class="section-link">My GitHub Profile</a></li>
+                    <li><a href="#" class="section-link">My LinkedIn Profile</a></li>
                     <li><a href="#" class="section-link">Contact Information</a></li>
-                    <li><a href="#" class="section-link">My Favorite Links</a></li>
                 </ul>
             </nav>
         </section>
 
-        <!-- A Simple Quote or Motto Section -->
         <section class="mb-8 text-center italic text-gray-600">
-            <p>"The simpler the better."</p>
-        </section>
+            <p>"The pursuit of knowledge is a journey, not a destination."</p>
+        </section> -->
 
-        <!-- Footer Section -->
         <footer class="footer">
-            <p>&copy; 2025 [Your Name]. All rights reserved. Made with simplicity.</p>
+            <p>Last Updated: <span id="lastUpdatedDate"></span></p>
+            <p>&copy; 2025 Dinghao Xue.</p>
         </footer>
     </div>
+
+    <script>
+        // Get the current date
+        const today = new Date();
+
+        // Format the date as Month Day, Year (e.g., June 15, 2025)
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString('en-US', options);
+
+        // Find the span element and update its content
+        document.getElementById('lastUpdatedDate').textContent = formattedDate;
+    </script>
 </body>
 </html>
